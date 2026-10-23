@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script  type="text/javascript" src="https://codesandbox.io/public/sse-hooks/sse-hooks.e15ace8ccace5398a721ffec81f121de.js"></script>
+    <script  type="text/javascript" src="https://codesandbox.io/static/js/banner.d9cb10a38.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reasonover Law Firm | Reasonover Law Firm</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #252525;
+    line-height: 1.8;
+}
+
+.cloud-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+/* HERO - BLACK + NAVY + BLUE */
+.hero {
+    background: linear-gradient(135deg, #000000, #1E3A8A, #2563EB);
+    color: #ffffff;
+    padding: 55px 35px;
+    text-align: center;
+    border-bottom: 5px solid #7C3AED;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.25;
+    letter-spacing: .3px;
+}
+
+.hero span {
+    color: #ffffff;
+}
+
+/* CONTENT */
+.content {
+    padding: 35px;
+}
+
+.content h2 {
+    color: #1E3A8A;
+    font-size: 27px;
+    margin-top: 42px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-left: 6px solid #2563EB;
+    border-bottom: 2px solid #7C3AED;
+    background: #f8f9ff;
+    border-radius: 0 8px 8px 0;
+}
+
+.content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #444;
+    text-align: justify;
+}
+
+.content strong {
+    color: #991B1B;
+}
+
+.intro {
+    background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+    border-left: 6px solid #2563EB;
+    border-right: 3px solid #15803D;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* CONTACT */
+.contact-section {
+    background: linear-gradient(135deg, #000000, #1E3A8A, #7C3AED);
+    color: #ffffff;
+    padding: 45px 35px;
+}
+
+.contact-section h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2563EB;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    background: rgba(0,0,0,0.45);
+    border: 1px solid #2563EB;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #15803D;
+    transform: translateY(-3px);
+}
+
+.contact-card strong {
+    display: block;
+    color: #2563EB;
+    margin-bottom: 7px;
+}
+
+.contact-card a {
+    color: #ffffff;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: #15803D;
+}
+
+/* SOCIAL BUTTONS */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    background: #2563EB;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #15803D;
+    border-color: #ffffff;
+}
+
+/* DIFFERENT SOCIAL COLORS */
+.social-links a:nth-child(1) {
+    background: #2563EB;
+}
+
+.social-links a:nth-child(2) {
+    background: #000000;
+}
+
+.social-links a:nth-child(3) {
+    background: #7C3AED;
+}
+
+/* MAP */
+.map-section {
+    padding: 40px 35px 45px;
+    background: linear-gradient(135deg, #f4f6f8, #eef2ff);
+    text-align: center;
+}
+
+.map-section h2 {
+    color: #1E3A8A;
+    margin-top: 0;
+    font-size: 29px;
+    border-bottom: 3px solid #2563EB;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 4px solid #1E3A8A;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: #ddd;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* FOOTER - DARK RED + BLACK */
+.footer {
+    background: linear-gradient(90deg, #000000, #991B1B);
+    color: #ffffff;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+    border-top: 4px solid #15803D;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+
+    .cloud-container {
+        margin: 15px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .content,
+    .contact-section,
+    .map-section {
+        padding: 25px 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content p {
+        text-align: left;
+    }
+
+    .map-wrapper {
+        height: 350px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud-container">
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1>
+            <span>HelixSEO | Google Map SEO</span>
+        </h1>
+    </header>
+
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <div class="intro">
+            <p>
+                HelixSEO | Google Map SEO helps local businesses improve their online visibility through strategic local search optimization, <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Google Map SEO</a></strong>, and digital marketing services. Based in Nashville, Tennessee, HelixSEO works with small and midsize businesses that want to strengthen their online presence, connect with local customers, and attract more relevant leads.
+
+Founded in November 2021 by Jim Pepe, HelixSEO provides marketing consulting, SEO services, website design, and pay-per-click advertising solutions tailored to business goals.
+            </p>
+        </div>
+
+
+        <h2>Local SEO Services</h2>
+
+        <p> Local SEO helps businesses improve their visibility when nearby customers search online for relevant products or services. HelixSEO focuses on local search strategies that help businesses build a stronger digital presence, improve website relevance, and reach potential customers in their service areas.
+
+From keyword research and website optimization to Google Business Profile improvements, an effective <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Local SEO</a></strong> strategy can help businesses strengthen their local marketing efforts.
+        </p>
+
+
+        <h2>Google Map SEO</h2>
+
+        <p>
+            <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Google Map SEO</a></strong> focuses on improving a business's visibility in Google Maps and local search results. HelixSEO helps businesses develop their local search presence through relevant business information, Google Business Profile optimization, location-focused content, and other <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Local SEO</a></strong> practices.
+
+Businesses that want to reach nearby customers can benefit from a consistent strategy that supports accurate business details, relevant service information, and a well-maintained online presence.
+
+Learn more about Google Map SEO: https://maps.app.goo.gl/6QbNmkq3uKNvVKdk9
+        </p>
+
+
+        <h2>Map SEO</h2>
+
+        <p>
+            
+Map SEO is an important part of local digital marketing for businesses that depend on customers in specific geographic areas. It involves improving local relevance, maintaining accurate business information, and optimizing a business's online presence to support discovery through map-based searches.
+
+HelixSEO works with small and midsize businesses to strengthen their local marketing strategies and improve how potential customers find them online. While results depend on competition, location, relevance, and other factors, consistent Map SEO can support long-term local visibility.
+        </p>
+
+
+        <h2>Google My Business Optimization</h2>
+
+        <p>
+           Google My Business Optimization, now commonly referred to as Google Business Profile optimization, helps businesses maintain and improve their presence on Google Search and Google Maps.
+
+HelixSEO can help businesses focus on important profile elements, including business categories, service information, business descriptions, contact details, photos, and updates. Keeping profile information accurate and relevant can make it easier for potential customers to understand a business and contact it.
+
+Learn more: https://maps.app.goo.gl/6QbNmkq3uKNvVKdk9
+        </p>
+
+
+        <h2>SEO Website Design</h2>
+
+        <p> A well-structured website supports <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Local SEO</a></strong> by helping visitors find important information and understand the services a business offers. HelixSEO provides SEO website design services that combine website structure, useful content, and search optimization practices.
+
+An effective website should provide a clear user experience, work well on mobile devices, load efficiently, and make it easy for customers to contact the business.
+        </p>
+
+
+        <h2>Digital Marketing and PPC Management</h2>
+
+        <p>
+            In addition to <strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Local SEO</a></strong> and Google Map SEO, HelixSEO offers digital marketing and consulting services for small and midsize businesses. These services include pay-per-click advertising management through platforms such as Google Ads, Microsoft Advertising (Bing), and Facebook advertising.
+
+Paid campaigns can help businesses reach specific audiences, promote services, and generate website traffic. Campaign performance depends on targeting, budget, competition, and the quality of the advertising strategy.
+
+        </p>
+
+
+        <h2>Legal Guidance After an Accident</h2>
+
+        <p>
+            
+After an accident, keeping records can help you organize important information. Depending on the circumstances, useful records may include medical documentation, accident reports, photographs, insurance correspondence, and information about missed work. Speaking with a qualified attorney can help you understand which documents may be relevant and what steps to consider next.
+        </p>
+
+
+        <h2>Why Choose HelixSEO | Google Map SEO?</h2>
+
+        <p>Local SEO strategies designed around business goals.
+
+Google Map SEO and Google Business Profile optimization.
+
+Map SEO support for businesses targeting local customers.
+
+SEO website design and website optimization.
+
+Digital marketing consulting for small and midsize businesses.
+
+Pay-per-click advertising management for Google, Bing, and Facebook.
+
+Personalized marketing support from an experienced team.
+
+HelixSEO aims to help businesses build a stronger online presence through practical search optimization and digital marketing strategies.
+        </p>
+
+
+        <h2>Improve Your Local Online Visibility</h2>
+
+        <p> 
+
+If you want to strengthen your business's presence in local search results, HelixSEO | Google Map SEO offers services covering Local SEO,<strong><a href="https://helixseo.com/" target="_blank" rel="noopener">Google Map SEO</a></strong>, Map SEO, Google My Business Optimization, SEO website design, and digital marketing.
+
+Visit https://helixseo.com/ or call (615) 900-4736 to learn more about available services and discuss your local marketing goals.
+        </p>
+
+
+    </main>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section">
+
+        <h2>HelixSEO | Google Map SEO</h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <strong>Business Name</strong>
+               HelixSEO | Google Map SEO
+            </div>
+
+            <div class="contact-card">
+                <strong>Address</strong>
+               1321 Murfreesboro Pike, Nashville, TN 37217 
+            </div>
+
+            <div class="contact-card">
+                <strong>Phone</strong>
+                <a href="tel:(615) 900-4736">
+                    (615) 900-4736
+                </a>
+            </div>
+
+            
+
+
+            <div class="contact-card">
+                <strong>Website</strong>
+                <a href="https://helixseo.com/" target="_blank" rel="noopener">
+                    https://helixseo.com/
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <strong>Hours</strong>
+                Monday to Friday 9:00 am-6:30 pm Saturday to Sunday Closed
+            </div>
+
+            <div class="contact-card">
+                <strong>Google Business Profile</strong>
+                <a href="https://maps.app.goo.gl/FtYEM52qqiZNgb3s8" target="_blank" rel="noopener">
+                    View Google Business Profile
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="social-links">
+
+            <a href="https://www.facebook.com/helixseo" target="_blank" rel="noopener">
+                Facebook
+            </a>
+
+            <a href="https://twitter.com/helixseo" target="_blank" rel="noopener">
+               twitter
+            </a>
+
+            <a href="https://www.youtube.com/@helixseo" target="_blank" rel="noopener">
+               youtube
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOOGLE MAP / GMB -->
+
+    <section class="map-section">
+
+        <h2>Find Our Location</h2>
+
+        <div class="map-wrapper">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.130286793176!2d-86.6957427!3d36.1146835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646ed955268cf7%3A0x9ef89e49ac8a8a1f!2sHelixSEO%20%7C%20Google%20Map%20SEO!5e0!3m2!1sen!2s!4v1792731742691!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2026 HelixSEO | Google Map SEO |
+        2323 1321 Murfreesboro Pike, Nashville, TN 37217 
+    </footer>
+
+</div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/watermark-button.eeb14a97b.js"></script>
+  </body>
+</html>
